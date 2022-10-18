@@ -1,0 +1,43 @@
+/* myHello */
+.divHello{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spanhello{
+  color: burlywood;
+}
+
+.numhello{
+  color: red;
+}
+
+p {
+  background-color: aqua;
+  text-align: center;
+}
+
+ul{
+   
+   list-style: none;
+   text-align: center;
+}
+.mvLik{
+  display: inline-flex;
+  font-size: 20px;
+  margin : 5px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  color: aqua;
+}
+.mvLik2{
+  display: inline-flex;
+  font-size: 20px;
+  margin : 5px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}

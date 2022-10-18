@@ -1,0 +1,32 @@
+*{ 
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul{  
+  
+}
+ul li{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;  
+  
+
+}
+ul li span{  
+  
+  font-family: Arial, Helvetica, sans-serif;
+  width: 15%;
+}
+ul{
+  justify-content: center;
+  align-items: center;
+}

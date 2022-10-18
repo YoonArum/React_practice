@@ -1,0 +1,54 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+header{
+  text-align: center;
+  background-color: palevioletred;
+  color: white;
+  
+}
+
+
+ul{  
+  
+  background-color: peachpuff;
+  display: flex;
+  list-style: none;
+  min-width: 100%;
+  
+  text-align: center;
+  
+}
+
+ul li{
+  width: 15%;
+  color: white;
+}
+
+.mvli{
+  display: flex;
+  justify-content: center;
+}
+
+.rank{
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+  margin: 1px;
+  padding: 1px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  height: 5%;  
+}
+
+tr{
+  margin-top: 5%;
+  display: flex;
+  text-align: middle;    
+}
+table tr td{
+  width: 15%;
+}
