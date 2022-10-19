@@ -1,7 +1,10 @@
 import MV from '../jsondata/MvInfo.json';
-import './Mv.css';
-import {useEffect, useReducer, useState} from 'react';
+
+import {useEffect, useReducer, useState,useRef} from 'react';
 import MvTimer from './MvTimer';
+import { getValue } from '@testing-library/user-event/dist/utils';
+
+
 
 function MvInfo() {
     //json 데이터 가져오기
@@ -70,9 +73,14 @@ function MvInfo() {
 
     const handTimer = () => {
         setfleg(!fleg);
-        // setfleg2(fleg2 === 'none' ? 'inline-flex' : 'none');
-    }
+        // setfleg2(fleg2 === 'none' ? 'inline-flex' : 'none');        
 
+    }
+    
+    //ref변수
+    let cntRef = useRef(0);
+    let txtRef = useRef();
+    let [txt1,setTxt1] = useState([]);
     
     const handleup = () => {
       setCntup(++cntup);
@@ -86,13 +94,30 @@ function MvInfo() {
     //재 랜더링시 계속 수행
     useEffect(()=>{
       console.log("useEffect 랜더링 발생시 계속 수행");
+      console.log("ref cnt : ",cntRef.current);
+      cntRef.current = cntRef.current+1;
+    
+      //랜더링 한번 발생했을떄 txtRef.current 위치에
+      //focus 커서
+      txtRef.current.focus();
     });
 
     //useEffect Hook : 관련 state변수가 변경될떄 실행
     useEffect(()=>{
       console.log("useEffect 랜더링 생성 한번 실행");
+      ++cntRef.current;
     },[cntup]);
-    
+
+    //form submit
+    const handlesubmit=(event)=>{
+        event.preventDefault();
+        console.log(txtRef.current.value);
+        //setTxt1(txtRef.current.value);
+        setTxt1([<li key={txtRef.current.value} className='ref1'>
+            {txtRef.current.value}</li>,...txt1]);
+    }
+
+
     
 
        
@@ -100,7 +125,12 @@ function MvInfo() {
 
 
     return (
-        <div>
+        <div className='all'>            
+        
+
+            <span>
+
+            </span>
             <h1>영화 상세</h1>
             <ul>
                 {/* <li><span>영화명</span>{mvinfo.movieNm}</li>
@@ -123,11 +153,26 @@ function MvInfo() {
                 <span onClick={handledown}>🤞</span>
                 <span>{cntdown}</span>            
                   </li>
-                  <li></li>
+
+          <div className='infoh1'>
+              <form className='mvform' onSubmit={handlesubmit}>
+                  <input type="text" ref={txtRef} placeholder='댓글을 입력하시오'/>
+                      <button type='submit'>등록</button>
+                      <button type= 'reset'>취소</button>                    
+              </form>
+              <div className='mvformlist'>
+                  <ul>
+                    {txt1}
+
+                  </ul>
+              </div>
+          </div>
+                
+                  
             </ul>
+           
             {/* <div className='mvList3' style={{'display':fleg2}}><MvTimer/></div> */}
-
-
+            
         </div>
     );
 }

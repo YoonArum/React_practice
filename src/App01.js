@@ -1,4 +1,4 @@
-import './App.css';
+import './App01.css';
 import MyCom from './components/MyCom';
 
 function App() {
@@ -42,9 +42,7 @@ function App() {
     "audiAcc": "6642615",
     "scrnCnt": "780",
     "showCnt": "2337"
-  },
-
-  
+  },  
 ]
 
 const mvs = mv.map((m) => 
