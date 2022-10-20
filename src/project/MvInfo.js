@@ -88,7 +88,7 @@ function MvInfo() {
     }
     const handledown = () => {
       setCntdown(++cntdown);
-    }
+    } 
 
     //useEffect Hook 랜더링시 매번 발생
     //재 랜더링시 계속 수행
